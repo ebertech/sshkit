@@ -31,7 +31,7 @@ module SSHKit
           unless command.stdout.empty?
             command.stdout.lines.each do |line|
               original_output << "%6s %s" % [level(Logger::DEBUG),
-                                             uuid(command) + c.green("\t" + line)]
+                                             uuid(command) + "\t" + line]
               original_output << "\n" unless line[-1] == "\n"
             end
             command.stdout = ''
